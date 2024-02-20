@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="bg-white min-vh-100 d-flex  align-items-center  justify-content-center ">
+        <div class="calculate">
+            <form name="form" class="text-center ">
+                <input class="w-100 rounded-pill output" type="text" id="answer" value="0" name="ans" readonly>
+                <input class="num" type="button" value="1" onclick="output('1')">
+                <input class="num" type="button" value="2" onclick="output('2')">
+                <input class="num" type="button" value="3" onclick="output('3')">
+                <input class="num" type="button" value="4" onclick="output('4')">
+                <input class="num" type="button" value="5" onclick="output('5')">
+                <input class="num" type="button" value="6" onclick="output('6')">
+                <input class="num" type="button" value="7" onclick="output('7')">
+                <input class="num" type="button" value="8" onclick="output('8')">
+                <input class="num" type="button" value="9" onclick="output('9')">
+                <input class="num" type="button" value="0" onclick="output('0')">
+                <input class="operator" id="plus" type="button" value="+" onclick="opr('+')">
+                <input class="operator" id="sub" type="button" value="-" onclick="opr('-')">
+                <input class="operator" id="divide" type="button" value="/" onclick="opr('/')">
+                <input class="operator" id="multi" type="button" value="*" onclick="opr('*')">
+                <input type="button" value="ac" onclick="form.ans.value  =''">
+                <input type="button" value="del" onclick="form.ans.value = form.ans.value.slice(0,-1)">
+                <input type="button" value="=" id="equal" onclick="num()">
+            </form>
+        </div>
+        <h2 id="demo"></h2>
+        <button id="clear" onclick="empty()">clear</button>
+    </div>
+    <script>
+        const answer = document.getElementById("answer")
+        function num() {
+            if (answer.value !== 0) {
+                answer.value = eval(answer.value)
+            }
+            document.getElementById("demo").innerHTML += answer.value + "<br>";
+        
+        }
+        function empty() {
+            form.ans.value="";
+            document.getElementById("demo").innerHTML= ""
+        }
+        function opr(operator) {
+            if (answer.value != 0) {
+                answer.value += operator
+            }
+            document.querySelectorAll(".operator").forEach((x)=>x.classList.add("event-none"));
+        }
+        function output(num) {
+            if (answer.value == 0) {
+                answer.value = num
+            }
+            else {
+                answer.value += num
+            }
+            document.querySelectorAll(".operator").forEach((x)=>x.classList.remove("event-none"));
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
