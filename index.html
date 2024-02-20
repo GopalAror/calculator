@@ -34,8 +34,8 @@
                 <input type="button" value="=" id="equal" onclick="num()">
             </form>
         </div>
-        <h2 id="demo"></h2>
-        <button id="clear" onclick="empty()">clear</button>
+        <!-- <h2 id="demo"></h2>
+        <button id="clear" onclick="empty()">clear</button> -->
     </div>
     <script>
         const answer = document.getElementById("answer")
@@ -43,13 +43,13 @@
             if (answer.value !== 0) {
                 answer.value = eval(answer.value)
             }
-            document.getElementById("demo").innerHTML += answer.value + "<br>";
+            // document.getElementById("demo").innerHTML += answer.value + "<br>";
         
         }
-        function empty() {
-            form.ans.value="";
-            document.getElementById("demo").innerHTML= ""
-        }
+        // function empty() {
+        //     form.ans.value="";
+        //     document.getElementById("demo").innerHTML= ""
+        // }
         function opr(operator) {
             if (answer.value != 0) {
                 answer.value += operator
