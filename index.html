@@ -37,19 +37,19 @@
                 <input class="num" type="button" value="1" onclick="output('1')">
                 <input class="num" type="button" value="2" onclick="output('2')">
                 <input class="num" type="button" value="3" onclick="output('3')">
+                <input class="operator" id="divide" type="button" value="/" onclick="opr('/')">
                 <input class="num" type="button" value="4" onclick="output('4')">
                 <input class="num" type="button" value="5" onclick="output('5')">
                 <input class="num" type="button" value="6" onclick="output('6')">
+                <input class="operator" id="multi" type="button" value="*" onclick="opr('*')">
                 <input class="num" type="button" value="7" onclick="output('7')">
                 <input class="num" type="button" value="8" onclick="output('8')">
                 <input class="num" type="button" value="9" onclick="output('9')">
-                <input class="num" type="button" value="0" onclick="output('0')">
-                <input class="operator" id="plus" type="button" value="+" onclick="opr('+')">
                 <input class="operator" id="sub" type="button" value="-" onclick="opr('-')">
-                <input class="operator" id="divide" type="button" value="/" onclick="opr('/')">
-                <input class="operator" id="multi" type="button" value="*" onclick="opr('*')">
                 <input type="button" value="." onclick="opr('.')">
+                <input class="num" type="button" value="0" onclick="output('0')">
                 <input type="button" value="ac" onclick="form.ans.value  =''">
+                <input class="operator" id="plus" type="button" value="+" onclick="opr('+')">
                 <input type="button" value="del" onclick="form.ans.value = form.ans.value.slice(0,-1)">
                 <input type="button" value="=" id="equal" onclick="num()">
             </form>
